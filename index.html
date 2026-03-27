@@ -534,12 +534,7 @@
         <h2>Claim a Copy of The People Equation Report</h2>
         <p class="form-sub">Fill out the form below and we'll send your copy instantly.</p>
 
-        <form
-          action="https://formspree.io/f/maqlwynq"
-          method="POST"
-        >
-          <!-- Redirect to thank-you page after submission -->
-          <input type="hidden" name="_next" value="thank-you.html" />
+        <form id="report-form">
           <input type="hidden" name="_subject" value="New People Equation Download Request" />
 
           <div class="form-row">
@@ -568,17 +563,47 @@
             <input type="email" id="email" name="email" placeholder="jane@company.com" required />
           </div>
 
-          <button type="submit" class="btn-submit">
+          <button type="submit" class="btn-submit" id="submit-btn">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 2a7 7 0 0 1 7 7v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h1V9a7 7 0 0 1 7-7zm0 11a2 2 0 0 0-1 3.73V18h2v-1.27A2 2 0 0 0 12 13zm0-9a5 5 0 0 0-5 5v2h10V9a5 5 0 0 0-5-5z"/>
             </svg>
-            Download the Free Report
+            <span id="btn-text">Download the Free Report</span>
           </button>
 
           <p class="form-disclaimer">
             No spam. Kevin Winn may reach out to you directly to answer any questions you may have.
           </p>
         </form>
+
+        <script>
+          document.getElementById('report-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            var btn = document.getElementById('submit-btn');
+            var btnText = document.getElementById('btn-text');
+            btn.disabled = true;
+            btnText.textContent = 'Sending\u2026';
+
+            var data = new FormData(this);
+            data.append('_subject', 'New People Equation Download Request');
+
+            try {
+              var res = await fetch('https://formspree.io/f/maqlwynq', {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+              });
+              if (res.ok) {
+                window.location.href = 'thank-you.html';
+              } else {
+                btnText.textContent = 'Something went wrong \u2014 try again';
+                btn.disabled = false;
+              }
+            } catch(err) {
+              btnText.textContent = 'Something went wrong \u2014 try again';
+              btn.disabled = false;
+            }
+          });
+        </script>
       </div>
 
     </div><!-- /.hero -->
