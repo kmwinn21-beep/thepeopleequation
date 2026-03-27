@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Report Is Ready | The People Equation</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0B3C62;
+      --blue:   #1B76BC;
+      --gold:   #FFCB3F;
+      --beige:  #E7DED9;
+      --white:  #ffffff;
+      --text:   #1a1a1a;
+      --muted:  #5a6472;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── HEADER ─────────────────────────────────────── */
+    header {
+      background: var(--navy);
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-mark {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-icon svg {
+      width: 26px;
+      height: 26px;
+      fill: var(--white);
+    }
+
+    .logo-text .brand-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      color: var(--white);
+      display: block;
+      line-height: 1.1;
+    }
+
+    .logo-text .brand-tag {
+      font-size: 10px;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      display: block;
+    }
+
+    /* ── MAIN ────────────────────────────────────────── */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+      background: linear-gradient(160deg, #f4f8fc 0%, var(--beige) 100%);
+    }
+
+    .thank-you-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 56px 48px;
+      max-width: 560px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 16px 56px rgba(11, 60, 98, 0.1);
+    }
+
+    .check-circle {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+
+    .check-circle svg {
+      width: 34px;
+      height: 34px;
+      stroke: var(--white);
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .thank-you-card h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 32px;
+      color: var(--navy);
+      margin-bottom: 12px;
+      line-height: 1.1;
+    }
+
+    .thank-you-card h1 em {
+      font-style: italic;
+      color: var(--blue);
+    }
+
+    .thank-you-card p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 10px;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: background 0.2s, transform 0.1s;
+      margin-bottom: 16px;
+    }
+
+    .btn-download:hover { background: var(--blue); }
+    .btn-download:active { transform: scale(0.98); }
+
+    .btn-download svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--gold);
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--beige);
+      margin: 32px 0;
+    }
+
+    .next-steps h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 18px;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .next-steps-list {
+      list-style: none;
+      text-align: left;
+    }
+
+    .next-steps-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .next-steps-list li .bullet {
+      width: 22px;
+      height: 22px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .next-steps-list li .bullet svg {
+      width: 12px;
+      height: 12px;
+      fill: var(--navy);
+    }
+
+    .contact-cta {
+      margin-top: 8px;
+      padding: 20px;
+      background: var(--navy);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .contact-cta p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .contact-cta a {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+
+    .contact-cta a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ──────────────────────────────────────── */
+    footer {
+      background: #071e31;
+      padding: 28px 40px;
+      text-align: center;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .footer-copy a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+    }
+
+    .footer-copy a:hover { color: var(--white); }
+
+    @media (max-width: 600px) {
+      .thank-you-card { padding: 36px 24px; }
+      header { padding: 16px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo-mark" aria-label="Procare HR">
+      <div class="logo-icon">
+        <svg viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13 22s-9-5.5-9-12a6 6 0 0 1 9-5.2A6 6 0 0 1 22 10c0 6.5-9 12-9 12z"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="brand-name">Procare HR</span>
+        <span class="brand-tag">Caring for people who care for people</span>
+      </div>
+    </a>
+  </header>
+
+  <main>
+    <div class="thank-you-card">
+
+      <div class="check-circle">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+
+      <h1>Your Report Is <em>Ready</em></h1>
+      <p>
+        Thank you for downloading <strong>The People Equation</strong>. Click below to access
+        your copy of the 2026 Senior Housing Workforce Report.
+      </p>
+
+      <a href="the-people-equation-2026.pdf" download class="btn-download">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2v13m0 0l-4-4m4 4l4-4M3 19h18v2H3z"/>
+        </svg>
+        Download The People Equation
+      </a>
+
+      <div class="divider"></div>
+
+      <div class="next-steps">
+        <h3>While You're Reading&hellip;</h3>
+        <ul class="next-steps-list">
+          <li>
+            <span class="bullet">
+              <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M2 6l3 3 5-5"/></svg>
+            </span>
+            <span>Benchmark your own labor KPIs against the best-in-class data in Chapter 2.</span>
+          </li>
+          <li>
+            <span class="bullet">
+              <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M2 6l3 3 5-5"/></svg>
+            </span>
+            <span>Review the client performance scorecards in Chapter 3 to see what's possible with strategic HR.</span>
+          </li>
+          <li>
+            <span class="bullet">
+              <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M2 6l3 3 5-5"/></svg>
+            </span>
+            <span>Share the 2026 Outlook section with your leadership team.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="contact-cta">
+        <p>Ready to solve the people equation for your organization?</p>
+        <a href="mailto:kwinn@procarehr.com">kwinn@procarehr.com &nbsp;&middot;&nbsp; 720.532.7013</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p class="footer-copy">
+      &copy; 2026 Procare HR &nbsp;&middot;&nbsp;
+      <a href="https://procarehr.com" target="_blank" rel="noopener">procarehr.com</a>
+    </p>
+  </footer>
+
+</body>
+</html>
