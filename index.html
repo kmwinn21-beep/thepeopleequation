@@ -40,47 +40,13 @@
     .logo-mark {
       display: flex;
       align-items: center;
-      gap: 12px;
       text-decoration: none;
     }
 
-    .logo-icon {
-      width: 44px;
+    .logo-mark img {
       height: 44px;
-      background: var(--blue);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .logo-icon svg {
-      width: 26px;
-      height: 26px;
-      fill: var(--white);
-    }
-
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .logo-text .brand-name {
-      font-family: 'DM Serif Display', serif;
-      font-size: 20px;
-      color: var(--white);
-      line-height: 1.1;
-      letter-spacing: 0.01em;
-    }
-
-    .logo-text .brand-tag {
-      font-family: 'Poppins', sans-serif;
-      font-size: 10px;
-      color: var(--gold);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-weight: 500;
+      width: auto;
+      display: block;
     }
 
     .report-badge {
@@ -180,6 +146,8 @@
       border-radius: 16px;
       padding: 36px 32px;
       box-shadow: 0 24px 64px rgba(0,0,0,0.28);
+      overflow: hidden;
+      min-width: 0;
     }
 
     .form-card h2 {
@@ -220,6 +188,8 @@
     }
 
     .form-group input {
+      width: 100%;
+      min-width: 0;
       border: 1.5px solid #d4dce6;
       border-radius: 8px;
       padding: 10px 14px;
@@ -538,17 +508,8 @@
 
   <!-- HEADER -->
   <header>
-    <a href="#" class="logo-mark" aria-label="Procare HR">
-      <div class="logo-icon">
-        <!-- C Heart icon approximation -->
-        <svg viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
-          <path d="M13 22s-9-5.5-9-12a6 6 0 0 1 9-5.2A6 6 0 0 1 22 10c0 6.5-9 12-9 12z"/>
-        </svg>
-      </div>
-      <div class="logo-text">
-        <span class="brand-name">Procare HR</span>
-        <span class="brand-tag">Caring for people who care for people</span>
-      </div>
+    <a href="https://procarehr.com/" class="logo-mark" aria-label="Procare HR" target="_blank" rel="noopener">
+      <img src="https://procarehr.wpenginepowered.com/wp-content/uploads/2022/06/Email-Signature-Logo.png" alt="Procare HR" />
     </a>
     <span class="report-badge">Free Report &darr;</span>
   </header>
@@ -566,29 +527,11 @@
           talent acquisition strategies, and the 2026 outlook every operator needs to see.
         </p>
 
-        <div class="stats-row">
-          <div class="stat-item">
-            <span class="stat-number">800+</span>
-            <span class="stat-label">Communities</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">35K+</span>
-            <span class="stat-label">Employees Managed</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">34–43%</span>
-            <span class="stat-label">AL Staff Turnover</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">$1–2M</span>
-            <span class="stat-label">Annual Turnover Cost</span>
-          </div>
-        </div>
       </div>
 
       <!-- Right: Form -->
       <div class="form-card">
-        <h2>Get the Free Report</h2>
+        <h2>Claim a Copy of The People Equation Report</h2>
         <p class="form-sub">Fill out the form below and we'll send your copy instantly.</p>
 
         <form
@@ -633,7 +576,7 @@
           </button>
 
           <p class="form-disclaimer">
-            No spam. We respect your privacy and will only send you relevant content.
+            No spam. Kevin Winn may reach out to you directly to answer any questions you may have.
           </p>
         </form>
       </div>
